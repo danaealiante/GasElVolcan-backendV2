@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:gas_test;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+app:
+  jwt-secret: MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=
+  admin-email: admin@test.local
+  admin-password: TestAdmin2026!
+  demo-data: false

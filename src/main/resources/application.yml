@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: gaselvolcan-backend
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/gaselvolcan_v2?serverTimezone=UTC}
+    username: ${DB_USER:gaselvolcan}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+app:
+  jwt-secret: ${JWT_SECRET:}
+  jwt-issuer: gaselvolcan-api
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173,http://localhost:3000}
+  admin-email: ${ADMIN_EMAIL:}
+  admin-password: ${ADMIN_PASSWORD:}
+  demo-data: false
+springdoc:
+  swagger-ui:
+    persist-authorization: false
